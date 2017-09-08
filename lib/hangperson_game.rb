@@ -16,12 +16,12 @@ class HangpersonGame
   def guess(input)
     raise ArgumentError if input.nil? || input.empty? || (input =~ /[^A-Za-z]/)
 
-    input.downcase!
+    input.downcase!             #https://stackoverflow.com/questions/1020568/how-to-convert-a-string-to-lower-or-upper-case-in-ruby
     if (@guesses.include? input) || (@wrong_guesses.include? input)
        false
     else
       if (@word.include? input)
-        @guesses << input
+        @guesses << input         #https://stackoverflow.com/questions/2356905/appending-to-an-existing-string
       else
         @wrong_guesses << input
       end
